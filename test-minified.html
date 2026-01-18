@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minified Files Test | Dharma Dairy</title>
+    <!-- Using MINIFIED CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="glass" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+        <div class="container">
+            <div class="logo">
+                <h2>Dharma <span style="color: var(--accent-gold);">Test Page</span></h2>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 30px;">✅ Minified Files Test</h1>
+
+            <div style="background: var(--light-green); padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+                <h3 style="color: var(--primary-green);">CSS Variables Test</h3>
+                <p>If you see green text and light green background, <strong>style.min.css is working!</strong></p>
+            </div>
+
+            <div class="trust-badges" style="margin-bottom: 30px;">
+                <div class="trust-badge">
+                    <i class="fas fa-leaf"></i>
+                    <span>CSS Badge Test</span>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Styles Working</span>
+                </div>
+            </div>
+
+            <div id="js-test"
+                style="background: #fff3cd; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 30px;">
+                <p>⏳ Testing JavaScript...</p>
+            </div>
+
+            <button class="btn btn-primary" onclick="testCart()">
+                <i class="fas fa-shopping-bag"></i> Test Add to Cart
+            </button>
+        </div>
+    </main>
+
+    <!-- Using MINIFIED JS -->
+    <script src="js/script.min.js"></script>
+    <script>
+        // Test if script.min.js loaded correctly
+        document.addEventListener('DOMContentLoaded', function () {
+            const testDiv = document.getElementById('js-test');
+
+            // Check if cart functions exist from script.min.js
+            if (typeof addToCart === 'function' && typeof updateCartBadge === 'function') {
+                testDiv.innerHTML = '<p style="color: green; font-weight: bold;">✅ script.min.js loaded successfully!</p><p>Cart functions available: addToCart, updateCartBadge</p>';
+                testDiv.style.background = '#d4edda';
+            } else {
+                testDiv.innerHTML = '<p style="color: red;">❌ script.min.js failed to load properly</p>';
+                testDiv.style.background = '#f8d7da';
+            }
+        });
+
+        function testCart() {
+            addToCart({ name: 'Test Product', price: 100, image: 'assets/images/milk.png' }, event);
+        }
+    </script>
+</body>
+
+</html>

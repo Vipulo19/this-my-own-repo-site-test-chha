@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist | Dharma Dairy & Veg</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar" id="main-nav">
+        <div class="container navbar__container">
+            <a href="index.html" class="navbar__logo">
+                <h2>Dharma <span class="accent-gold">Dairy & Veg</span></h2>
+                <p class="navbar__tagline">Pure. Fresh. Trusted.</p>
+            </a>
+
+            <button class="navbar__toggle" aria-controls="navbar-menu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <nav class="navbar__menu" id="navbar-menu">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="index.html" class="navbar__link">Home</a></li>
+                    <li class="navbar__item navbar__item--has-dropdown">
+                        <a href="products.html" class="navbar__link navbar__link--dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Products <i class="fas fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                        </a>
+                        <ul class="navbar__dropdown" role="menu">
+                            <li><a href="products.html" role="menuitem">All Products</a></li>
+                            <li><a href="products.html#dairy" role="menuitem"><i class="fas fa-wine-bottle"></i> Dairy
+                                    Essentials</a></li>
+                            <li><a href="products.html#vegetables" role="menuitem"><i class="fas fa-carrot"></i> Farm
+                                    Vegetables</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
+                    <li class="navbar__item"><a href="special.html" class="navbar__link">Special</a></li>
+                    <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar__actions">
+                <button class="navbar__action-btn" aria-label="Search" onclick="handleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="navbar__action-btn wishlist-link" aria-label="Wishlist"
+                    aria-current="page">
+                    <i class="far fa-heart"></i>
+                </a>
+                <a href="cart.html" class="navbar__action-btn cart-icon-link" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ul class="breadcrumbs-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><span class="separator"><i class="fas fa-chevron-right"></i></span></li>
+                    <li><span>Wishlist</span></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="page-header">
+            <div class="container">
+                <h1>My Wishlist ❤️</h1>
+                <p>Save items you love to verify stock and buy later.</p>
+            </div>
+        </div>
+
+        <div class="wishlist-page-container">
+            <div class="container">
+
+                <div id="wishlist-grid" class="products-grid">
+                    <!-- Loaded via JS -->
+                </div>
+
+                <div id="empty-state" class="empty-wishlist" style="display: none;">
+                    <i class="far fa-heart"></i>
+                    <h3>Your wishlist is empty</h3>
+                    <p>Save items you love to verify stock and buy later.</p>
+                    <a href="products.html" class="btn btn-primary">Browse Products</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-enhanced">
+        <div class="container">
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <h3>Join Our Fresh Journey</h3>
+                <p>Subscribe to get updates on seasonal harvests and exclusive farm-to-table offers.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe Now</button>
+                </form>
+            </div>
+
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Dharma</h3>
+                            <p>Dairy & Veg</p>
+                        </div>
+                    </div>
+                    <p class="brand-desc">
+                        Bringing the purity of the farm directly to your doorstep. We take pride in delivering the
+                        freshest organic dairy and vegetables, nurtured with care and delivered with love.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/916351510371" class="social-link whatsapp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links-grid">
+                    <div class="footer-links-col">
+                        <h4><i class="fas fa-link"></i> Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a>
+                            </li>
+                            <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> Our
+                                    Story</a></li>
+                            <li><a href="products.html" class="footer-link"><i class="fas fa-chevron-right"></i> Shop
+                                    All</a></li>
+                            <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i> Special
+                                    Offers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4><i class="fas fa-shopping-basket"></i> Shop Categories</h4>
+                        <ul>
+                            <li><a href="products.html#dairy" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                    Dairy Products</a></li>
+                            <li><a href="products.html#vegetables" class="footer-link"><i
+                                        class="fas fa-chevron-right"></i> Fresh Vegetables</a></li>
+                            <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i> Organic
+                                    Ghee</a></li>
+                            <li><a href="products.html#leafy" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                    Leafy Greens</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4><i class="fas fa-envelope"></i> Get in Touch</h4>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Visit Us</span>
+                            <a href="https://maps.google.com/?q=Dhanera, Banaskantha, Gujarat, India 385310"
+                                target="_blank">Dhanera, Banaskantha, Gujarat, India 385310</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Call Us</span>
+                            <a href="tel:+916351510371">+91 6351 510 371</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Email Us</span>
+                            <a href="mailto:info@dharmadairy.com">info@dharmadairy.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-badges">
+                    <div class="footer-badge"><i class="fas fa-truck"></i> Free Delivery</div>
+                    <div class="footer-badge"><i class="fas fa-certificate"></i> 100% Organic</div>
+                    <div class="footer-badge"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                </div>
+                <div class="copyright">
+                    &copy; 2024 Dharma Dairy & Veg. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderWishlist();
+        });
+
+        function renderWishlist() {
+            const wishlist = JSON.parse(localStorage.getItem('dharmaWishlist') || '[]');
+            const container = document.getElementById('wishlist-grid');
+            const emptyState = document.getElementById('empty-state');
+
+            if (wishlist.length === 0) {
+                container.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            container.style.display = 'grid';
+            emptyState.style.display = 'none';
+
+            // Filter products
+            const items = products.filter(p => wishlist.includes(p.id));
+
+            container.innerHTML = items.map(p => createWishlistCard(p)).join('');
+        }
+
+        function createWishlistCard(product) {
+            // Determine stock label
+            let stockLabel = '';
+            let btnState = '';
+            let btnText = 'Add';
+
+            if (product.stock === 'Limited') {
+                stockLabel = '<span class="stock-badge-card stock-low">Limited</span>';
+            } else if (product.stock === 'Out of Stock') {
+                stockLabel = '<span class="stock-badge-card stock-out">Out of Stock</span>';
+                btnState = 'disabled';
+                btnText = 'No Stock';
+            }
+
+            return `
+                <div class="product-card">
+                    <div class="product-image">
+                        ${stockLabel}
+                        <a href="detail.html?id=${product.id}">
+                            <img src="${product.image}" alt="${product.name}">
+                        </a>
+                        <button class="wishlist-btn-card" onclick="toggleWishlist('${product.id}', this)" style="position: absolute; top: 15px; right: 15px; background: white; border: none; border-radius: 50%; width: 35px; height: 35px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer;">
+                            <i class="fas fa-heart" style="color: #E91E63;"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="detail.html?id=${product.id}" style="text-decoration: none; color: inherit;">${product.name}</a></h3>
+                        <p class="card-short-desc" style="font-size: 0.85rem; color: #777; margin-bottom: 8px;">${product.description.substring(0, 50)}...</p>
+                        <div class="product-price">₹${product.price} <span>/${product.unit}</span></div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary" ${btnState}
+                                onclick="addToCart({name: '${product.name}', price: ${product.price}, image: '${product.image}'}, event)">
+                                <i class="fas fa-shopping-bag"></i> ${btnText}
+                            </button>
+                            <button class="btn btn-gold" ${btnState}
+                                onclick="buyNow({name: '${product.name}', price: ${product.price}, image: '${product.image}'}, event)">
+                                <i class="fas fa-bolt"></i> Buy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Dharma Dairy & Veg</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <!-- Header -->
+    <header class="navbar" id="main-nav">
+        <div class="container navbar__container">
+            <a href="index.html" class="navbar__logo">
+                <h2>Dharma <span class="accent-gold">Dairy & Veg</span></h2>
+                <p class="navbar__tagline">Pure. Fresh. Trusted.</p>
+            </a>
+
+            <button class="navbar__toggle" aria-controls="navbar-menu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <nav class="navbar__menu" id="navbar-menu">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="index.html" class="navbar__link">Home</a></li>
+                    <li class="navbar__item navbar__item--has-dropdown">
+                        <a href="products.html" class="navbar__link navbar__link--dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Products <i class="fas fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                        </a>
+                        <ul class="navbar__dropdown" role="menu">
+                            <li><a href="products.html" role="menuitem">All Products</a></li>
+                            <li><a href="products.html#dairy" role="menuitem"><i class="fas fa-wine-bottle"></i> Dairy
+                                    Essentials</a></li>
+                            <li><a href="products.html#vegetables" role="menuitem"><i class="fas fa-carrot"></i> Farm
+                                    Vegetables</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
+                    <li class="navbar__item"><a href="special.html" class="navbar__link">Special</a></li>
+                    <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar__actions">
+                <button class="navbar__action-btn" aria-label="Search" onclick="handleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="navbar__action-btn wishlist-link" aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                </a>
+                <a href="cart.html" class="navbar__action-btn cart-icon-link" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><span class="separator"><i class="fas fa-chevron-right"></i></span></li>
+                <li><span>My Profile</span></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="page-header">
+        <div class="container">
+            <h1>My Account</h1>
+            <p>Manage your orders, addresses, and preferences.</p>
+        </div>
+    </div>
+
+    <main class="profile-container">
+        <div class="container">
+            <div class="profile-grid">
+                <!-- Sidebar -->
+                <aside class="profile-sidebar">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h2 class="profile-name" id="profileName">Loading...</h2>
+                    <p class="profile-email" id="profileEmail">loading@example.com</p>
+
+                    <ul class="profile-menu">
+                        <li><a href="#dashboard" class="active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                        <li><a href="#orders"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                        <li><a href="#addresses"><i class="fas fa-map-marker-alt"></i> Addresses</a></li>
+                        <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+                    </ul>
+
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="profile-content">
+
+                    <!-- Dashboard Tab -->
+                    <div id="dashboard-tab" class="tab-content active">
+                        <!-- Personal Info -->
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>Personal Information</h3>
+                                <button id="editProfileBtn" onclick="toggleEditProfile()"
+                                    class="btn btn-outline btn-small"><i class="fas fa-edit"></i> Edit</button>
+                            </div>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Full Name</label>
+                                    <p id="infoName">--</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Email Address</label>
+                                    <p id="infoEmail">--</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Phone Number</label>
+                                    <p id="infoPhone">+91 98765 43210</p>
+                                </div>
+                                <div class="info-item">
+                                    <label>Member Since</label>
+                                    <p>Dec 2024</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Orders Preview -->
+                        <div class="content-card" style="margin-top: 30px;">
+                            <div class="card-header">
+                                <h3>Recent Orders</h3>
+                                <a href="#" onclick="switchTab('orders')"
+                                    style="color: var(--primary-green); font-weight: 500;">View All</a>
+                            </div>
+                            <div class="order-list">
+                                <div class="order-item">
+                                    <div class="order-info">
+                                        <h4>Order #DD4582</h4>
+                                        <p>Dec 18, 2024 • 4 Items</p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <p style="font-weight: 600; color: var(--text-dark);">₹480.00</p>
+                                        <span class="order-status status-delivered">Delivered</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders Tab -->
+                    <div id="orders-tab" class="tab-content" style="display: none;">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>My Orders</h3>
+                            </div>
+                            <div class="order-list">
+                                <div class="order-item">
+                                    <div class="order-info">
+                                        <h4>Order #DD4582</h4>
+                                        <p>Dec 18, 2024 • 4 Items</p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <p style="font-weight: 600; color: var(--text-dark);">₹480.00</p>
+                                        <span class="order-status status-delivered">Delivered</span>
+                                    </div>
+                                </div>
+                                <div class="order-item">
+                                    <div class="order-info">
+                                        <h4>Order #DD4521</h4>
+                                        <p>Dec 15, 2024 • 2 Items</p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <p style="font-weight: 600; color: var(--text-dark);">₹320.00</p>
+                                        <span class="order-status status-delivered">Delivered</span>
+                                    </div>
+                                </div>
+                                <div class="order-item">
+                                    <div class="order-info">
+                                        <h4>Order #DD4100</h4>
+                                        <p>Nov 30, 2024 • 1 Item</p>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <p style="font-weight: 600; color: var(--text-dark);">₹150.00</p>
+                                        <span class="order-status status-delivered">Delivered</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Addresses Tab -->
+                    <div id="addresses-tab" class="tab-content" style="display: none;">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>Saved Addresses</h3>
+                                <button id="addAddressBtn" onclick="toggleAddAddress()"
+                                    class="btn btn-primary btn-small"><i class="fas fa-plus"></i> Add New</button>
+                            </div>
+
+                            <!-- Address List Display -->
+                            <div class="address-list" id="addressListDisplay">
+                                <!-- Loaded via JS -->
+                            </div>
+
+                            <!-- Add/Edit Address Form -->
+                            <div id="addressForm" style="display: none;">
+                                <form id="newAddressForm" onsubmit="saveNewAddress(event)">
+                                    <div class="form-group">
+                                        <label>Address Line 1</label>
+                                        <input type="text" id="addrLine" class="form-input" required
+                                            placeholder="House No, Street, Landmark">
+                                    </div>
+                                    <div class="input-grid"
+                                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                        <div class="form-group">
+                                            <label>City</label>
+                                            <input type="text" id="addrCity" class="form-input" required
+                                                placeholder="City">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Pincode</label>
+                                            <input type="text" id="addrZip" class="form-input" required
+                                                placeholder="Pincode" pattern="[0-9]{6}">
+                                        </div>
+                                    </div>
+                                    <!-- Optional phone override if profile doesn't have it -->
+                                    <div class="form-group">
+                                        <label>Phone Number (for delivery)</label>
+                                        <input type="tel" id="addrPhone" class="form-input"
+                                            placeholder="Enter only if different from profile">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary"
+                                        style="margin-top: 15px; width: 100%;">Save Address</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Tab -->
+                    <div id="settings-tab" class="tab-content" style="display: none;">
+                        <div class="content-card">
+                            <div class="card-header">
+                                <h3>Account Settings</h3>
+                            </div>
+                            <div class="info-item" style="margin-bottom: 20px;">
+                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                    <input type="checkbox" checked> Receive Email Notifications
+                                </label>
+                            </div>
+                            <div class="info-item">
+                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                    <input type="checkbox" checked> Receive WhatsApp Updates
+                                </label>
+                            </div>
+                            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                                <h4 style="color: #ef5350; margin-bottom: 15px;">Danger Zone</h4>
+                                <button class="btn btn-outline" style="border-color: #ef5350; color: #ef5350;">Delete
+                                    Account</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-enhanced">
+        <div class="container">
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <h3>Join Our Fresh Journey</h3>
+                <p>Subscribe to get updates on seasonal harvests and exclusive farm-to-table offers.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe Now</button>
+                </form>
+            </div>
+
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Dharma</h3>
+                            <p>Dairy & Veg</p>
+                        </div>
+                    </div>
+                    <p class="brand-desc">
+                        Bringing the purity of the farm directly to your doorstep. We take pride in delivering the
+                        freshest organic dairy and vegetables, nurtured with care and delivered with love.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/916351510371" class="social-link whatsapp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links-grid">
+                    <div class="footer-links-col">
+                        <h4><i class="fas fa-link"></i> Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a>
+                            </li>
+                            <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> Our
+                                    Story</a></li>
+                            <li><a href="products.html" class="footer-link"><i class="fas fa-chevron-right"></i> Shop
+                                    All</a></li>
+                            <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i> Special
+                                    Offers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4><i class="fas fa-shopping-basket"></i> Shop Categories</h4>
+                        <ul>
+                            <li><a href="products.html#dairy" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                    Dairy Products</a></li>
+                            <li><a href="products.html#vegetables" class="footer-link"><i
+                                        class="fas fa-chevron-right"></i> Fresh Vegetables</a></li>
+                            <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i> Organic
+                                    Ghee</a></li>
+                            <li><a href="products.html#leafy" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                    Leafy Greens</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4><i class="fas fa-envelope"></i> Get in Touch</h4>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Visit Us</span>
+                            <a href="https://maps.google.com/?q=Dhanera, Banaskantha, Gujarat, India 385310"
+                                target="_blank">Dhanera, Banaskantha, Gujarat, India 385310</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Call Us</span>
+                            <a href="tel:+916351510371">+91 6351 510 371</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Email Us</span>
+                            <a href="mailto:info@dharmadairy.com">info@dharmadairy.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-badges">
+                    <div class="footer-badge"><i class="fas fa-truck"></i> Free Delivery</div>
+                    <div class="footer-badge"><i class="fas fa-certificate"></i> 100% Organic</div>
+                    <div class="footer-badge"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                </div>
+                <div class="copyright">
+                    &copy; 2024 Dharma Dairy & Veg. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logout Confirmation Modal -->
+    <div class="logout-modal-backdrop" id="logoutModal">
+        <div class="logout-modal">
+            <div class="logout-icon-wrapper">
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+            <h3>Log Out?</h3>
+            <p>Are you sure you want to sign out of your account?</p>
+            <div class="logout-actions">
+                <button class="btn-cancel" onclick="closeLogoutModal()">Cancel</button>
+                <button class="btn-confirm-logout" onclick="confirmLogout()">Yes, Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check auth
+            const user = JSON.parse(localStorage.getItem('dharmaUser'));
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Populate data
+            document.getElementById('profileName').textContent = user.name || 'Valued Customer';
+            document.getElementById('infoName').textContent = user.name || 'Valued Customer';
+            document.getElementById('profileEmail').textContent = user.email || 'user@example.com';
+            document.getElementById('infoEmail').textContent = user.email || 'user@example.com';
+
+            // Populate Phone
+            const infoPhone = document.getElementById('infoPhone');
+            if (infoPhone) {
+                infoPhone.textContent = user.phone || 'Not added';
+            }
+
+            // Populate Address from checkout history
+            loadSavedAddress();
+
+            // Handle Navigation
+            const navLinks = document.querySelectorAll('.profile-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    switchTab(targetId);
+                });
+            });
+
+            // Check Hash on Load
+            const hash = window.location.hash.substring(1);
+            if (hash && ['dashboard', 'orders', 'addresses', 'settings'].includes(hash)) {
+                switchTab(hash);
+            }
+        });
+
+        function switchTab(tabId) {
+            // Update Menu
+            document.querySelectorAll('.profile-menu a').forEach(el => {
+                el.classList.remove('active');
+                if (el.getAttribute('href') === '#' + tabId) {
+                    el.classList.add('active');
+                }
+            });
+
+            // Update Content
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.style.display = 'none';
+                el.classList.remove('active');
+            });
+
+            const targetContent = document.getElementById(tabId + '-tab');
+            if (targetContent) {
+                targetContent.style.display = 'block';
+                // Small timeout to allow display:block to apply before opacity transition if we had one
+                setTimeout(() => targetContent.classList.add('active'), 10);
+            }
+        }
+
+        function logout() {
+            const modal = document.getElementById('logoutModal');
+            modal.classList.add('show');
+        }
+
+        function closeLogoutModal() {
+            const modal = document.getElementById('logoutModal');
+            modal.classList.remove('show');
+        }
+
+        function confirmLogout() {
+            localStorage.removeItem('dharmaUser');
+            window.location.href = 'index.html';
+        }
+
+        // Close modal on outside click
+        document.getElementById('logoutModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeLogoutModal();
+            }
+        });
+
+        function loadSavedAddress() {
+            const savedAddress = JSON.parse(localStorage.getItem('dharmaAddress'));
+            const addressList = document.querySelector('.address-list');
+
+            if (savedAddress && addressList) {
+                addressList.innerHTML = `
+                    <div class="order-item" style="display: block;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <h4><i class="fas fa-home"></i> Default Shipping</h4>
+                            <span style="background: var(--light-green); color: var(--primary-green); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;">Active</span>
+                        </div>
+                        <p style="color: var(--text-light); line-height: 1.5;">
+                            <strong>${savedAddress.fullName || ''}</strong><br>
+                            ${savedAddress.address || ''}<br>
+                            ${savedAddress.city || ''} - ${savedAddress.pincode || ''}<br>
+                            Phone: ${savedAddress.phone || ''}
+                        </p>
+                        <div style="margin-top: 15px; display: flex; gap: 15px;">
+                            <button onclick="deleteAddress()" class="btn btn-outline btn-small" style="font-size: 0.8rem; color: #ef5350; border-color: #ef5350;">Delete</button>
+                        </div>
+                    </div>
+                `;
+            } else if (addressList) {
+                addressList.innerHTML = '<p class="text-muted">No saved addresses found. Add one during checkout.</p>';
+            }
+        }
+
+        function deleteAddress() {
+            if (confirm('Delete this saved address?')) {
+                localStorage.removeItem('dharmaAddress');
+                loadSavedAddress();
+            }
+        }
+
+        function saveDefaultAddress() {
+            // Deprecated in favor of checkout flow, but keeping for compatibility if button exists
+            alert('Please add/update address during checkout.');
+        }
+
+        // Load Orders Function
+        function loadOrders() {
+            const container = document.querySelector('#orders-tab .order-list');
+            const dashboardPreview = document.querySelector('#dashboard-tab .order-list');
+
+            if (!container) return;
+
+            const orders = JSON.parse(localStorage.getItem('dharmaOrders')) || [];
+
+            // Common HTML generator
+            const generateOrderHTML = (order) => `
+                <div class="order-item">
+                    <div class="order-info">
+                        <h4>Order #${order.id}</h4>
+                        <p>${order.date} • ${order.items.length} Items</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <p style="font-weight: 600; color: var(--text-dark);">₹${order.total}</p>
+                        <span class="order-status status-processing">${order.status}</span>
+                    </div>
+                </div>
+            `;
+
+            if (orders.length === 0) {
+                const noOrdersHTML = '<p style="text-align:center; padding: 20px; color: var(--text-light);">No orders found. <a href="products.html" style="color:var(--primary-green)">Start Shopping</a></p>';
+                container.innerHTML = noOrdersHTML;
+                if (dashboardPreview) dashboardPreview.innerHTML = noOrdersHTML;
+            } else {
+                // Populate Full List
+                container.innerHTML = orders.map(generateOrderHTML).join('');
+
+                // Populate Dashboard Preview (Top 2)
+                if (dashboardPreview) {
+                    dashboardPreview.innerHTML = orders.slice(0, 2).map(generateOrderHTML).join('');
+                }
+            }
+        }
+
+        // Initial Call
+        document.addEventListener('DOMContentLoaded', loadOrders);
+
+        // Create Toast Element
+        const toast = document.createElement('div');
+        toast.className = 'success-toast';
+        toast.innerHTML = `<i class="fas fa-check-circle"></i><p>Profile Updated Successfully!</p>`;
+        document.body.appendChild(toast);
+
+        function showSuccessToast() {
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        let isEditing = false;
+        function toggleEditProfile() {
+            const btn = document.getElementById('editProfileBtn');
+            const infoName = document.getElementById('infoName');
+            const infoEmail = document.getElementById('infoEmail');
+            const infoPhone = document.getElementById('infoPhone');
+            const infoGrid = document.querySelector('.info-grid');
+
+            if (!isEditing) {
+                // Switch to Edit Mode with Fade Out
+                infoGrid.classList.add('fade-transition');
+                infoGrid.style.opacity = '0';
+
+                setTimeout(() => {
+                    // Convert text to inputs
+                    const currentName = infoName.innerText;
+                    const currentEmail = infoEmail.innerText;
+                    const currentPhone = infoPhone.innerText === 'Not added' ? '' : infoPhone.innerText;
+
+                    infoName.innerHTML = `<input type="text" id="editNameInput" value="${currentName}" class="form-input" style="padding: 5px 10px;">`;
+                    infoEmail.innerHTML = `<input type="email" id="editEmailInput" value="${currentEmail}" class="form-input" style="padding: 5px 10px;">`;
+                    infoPhone.innerHTML = `<input type="tel" id="editPhoneInput" value="${currentPhone}" class="form-input" style="padding: 5px 10px;" placeholder="Enter phone number">`;
+
+                    isEditing = true;
+                    btn.innerHTML = '<i class="fas fa-save"></i> Save Changes';
+                    btn.classList.add('btn-primary');
+                    btn.classList.remove('btn-outline');
+
+                    // Fade In
+                    infoGrid.style.opacity = '1';
+                }, 300);
+
+            } else {
+                // Save Changes
+                const newName = document.getElementById('editNameInput').value;
+                const newEmail = document.getElementById('editEmailInput').value;
+                const newPhone = document.getElementById('editPhoneInput').value;
+
+                if (!newName || !newEmail) {
+                    alert('Name and Email are required'); // Keep simple alert for validation error
+                    return;
+                }
+
+                // Show Saving State
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+
+                setTimeout(() => {
+                    // Update LocalStorage
+                    const user = JSON.parse(localStorage.getItem('dharmaUser'));
+                    user.name = newName;
+                    user.email = newEmail;
+                    user.phone = newPhone;
+                    localStorage.setItem('dharmaUser', JSON.stringify(user));
+
+                    // Fade Out
+                    infoGrid.style.opacity = '0';
+
+                    setTimeout(() => {
+                        // Update UI
+                        infoName.innerText = newName;
+                        infoEmail.innerText = newEmail;
+                        infoPhone.innerText = newPhone || 'Not added';
+
+                        document.getElementById('profileName').innerText = newName;
+                        document.getElementById('profileEmail').innerText = newEmail;
+
+                        // Switch back to View Mode
+                        isEditing = false;
+                        btn.innerHTML = '<i class="fas fa-edit"></i> Edit';
+                        btn.classList.remove('btn-primary', 'btn-success');
+                        btn.classList.add('btn-outline');
+
+                        // Fade In
+                        infoGrid.style.opacity = '1';
+
+                        // Show Success Toast
+                        showSuccessToast();
+
+                    }, 300);
+                }, 800); // Fake delay for realism
+            }
+        }
+
+        function toggleAddAddress() {
+            const form = document.getElementById('addressForm');
+            const list = document.getElementById('addressListDisplay');
+            const btn = document.getElementById('addAddressBtn');
+
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                list.style.display = 'none';
+                btn.innerHTML = '<i class="fas fa-times"></i> Cancel';
+                btn.classList.replace('btn-primary', 'btn-outline');
+            } else {
+                form.style.display = 'none';
+                list.style.display = 'block';
+                btn.innerHTML = '<i class="fas fa-plus"></i> Add New';
+                btn.classList.replace('btn-outline', 'btn-primary');
+            }
+        }
+
+        function saveNewAddress(e) {
+            e.preventDefault();
+            const user = JSON.parse(localStorage.getItem('dharmaUser'));
+
+            const addressData = {
+                fullName: user.name || '',
+                email: user.email || '',
+                phone: user.phone || document.getElementById('addrPhone').value,
+                address: document.getElementById('addrLine').value,
+                city: document.getElementById('addrCity').value,
+                pincode: document.getElementById('addrZip').value
+            };
+
+            if (!addressData.address || !addressData.city || !addressData.pincode) {
+                alert('Please fill required fields');
+                return;
+            }
+
+            localStorage.setItem('dharmaAddress', JSON.stringify(addressData));
+            alert('Default shipping address saved!');
+
+            // Reset UI
+            document.getElementById('newAddressForm').reset();
+            toggleAddAddress(); // Switch back to list
+            loadSavedAddress(); // Reload list
+        }
+    </script>
+</body>
+
+</html>

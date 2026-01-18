@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | Dharma Dairy & Veg</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <!-- Header -->
+    <header class="navbar" id="main-nav">
+        <div class="container navbar__container">
+            <a href="index.html" class="navbar__logo">
+                <h2>Dharma <span class="accent-gold">Dairy & Veg</span></h2>
+                <p class="navbar__tagline">Pure. Fresh. Trusted.</p>
+            </a>
+
+            <button class="navbar__toggle" aria-controls="navbar-menu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <nav class="navbar__menu" id="navbar-menu">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="index.html" class="navbar__link">Home</a></li>
+                    <li class="navbar__item navbar__item--has-dropdown">
+                        <button class="navbar__link navbar__link--dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products <i class="fas fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                        </button>
+                        <ul class="navbar__dropdown" role="menu">
+                            <li><a href="products.html" role="menuitem">All Products</a></li>
+                            <li><a href="products.html#dairy" role="menuitem"><i class="fas fa-wine-bottle"></i> Dairy
+                                    Essentials</a></li>
+                            <li><a href="products.html#vegetables" role="menuitem"><i class="fas fa-carrot"></i> Farm
+                                    Vegetables</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
+                    <li class="navbar__item"><a href="special.html" class="navbar__link">Special</a></li>
+                    <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar__actions">
+                <div class="checkout-status" style="display: flex; gap: 15px; align-items: center; margin-right: 15px;">
+                    <span id="user-display" style="font-weight: 500; color: var(--primary-green);">Guest</span>
+                    <i class="fas fa-lock" style="color: var(--primary-green);"></i>
+                </div>
+                <a href="cart.html" class="navbar__action-btn cart-icon-link" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><span class="separator"><i class="fas fa-chevron-right"></i></span></li>
+                <li><span>Checkout</span></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Secure Checkout</h1>
+            <p>Fast, Safe, and Reliable Delivery to Your Doorstep.</p>
+        </div>
+    </div>
+
+    <main class="checkout-container main-content">
+        <!-- Progress Bar -->
+        <div class="checkout-progress">
+            <div class="progress-step active" id="step-auth">
+                <div class="step-circle">1</div>
+                <span>Login</span>
+            </div>
+            <div class="progress-step" id="step-address">
+                <div class="step-circle">2</div>
+                <span>Address</span>
+            </div>
+            <div class="progress-step" id="step-payment">
+                <div class="step-circle">3</div>
+                <span>Payment</span>
+            </div>
+            <div class="progress-step" id="step-success">
+                <div class="step-circle">4</div>
+                <span>Done</span>
+            </div>
+        </div>
+
+        <div class="checkout-grid">
+            <!-- Left Column: Forms -->
+            <div class="checkout-forms">
+                <!-- Step 1: Auth (Handled by redirect, but placeholder for structure) -->
+
+                <!-- Step 2: Address -->
+                <div id="form-address" class="form-section active">
+                    <h3 class="section-title"><i class="fas fa-map-marker-alt"></i> Shipping Address</h3>
+                    <form id="addressForm" onsubmit="handleAddressSubmit(event)">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-input" id="fullName" required>
+                        </div>
+                        <div class="input-grid">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-input" id="phone" required pattern="[0-9]{10}"
+                                    title="10 digit mobile number">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" class="form-input" id="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Address Line 1</label>
+                            <input type="text" class="form-input" id="address1" required
+                                placeholder="House No, Building, Street">
+                        </div>
+                        <div class="input-grid">
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" class="form-input" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Pincode</label>
+                                <input type="text" class="form-input" id="pincode" required pattern="[0-9]{6}">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                            Continue to Payment <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Step 3: Payment -->
+                <div id="form-payment" class="form-section">
+                    <h3 class="section-title"><i class="fas fa-credit-card"></i> Payment Method</h3>
+                    <div class="payment-selector">
+                        <label class="payment-option-card">
+                            <input type="radio" name="payment" value="upi" style="display: none;"
+                                onchange="selectPayment('upi')">
+                            <div class="payment-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div>
+                                <h4 style="margin: 0;">UPI</h4>
+                                <small style="color: var(--text-light);">Google Pay, PhonePe, Paytm</small>
+                            </div>
+                        </label>
+                        <div id="upi-details" class="payment-details" style="display: none;">
+                            <p>Scan QR Code to pay:</p>
+                            <div
+                                style="width: 150px; height: 150px; background: #eee; margin: 10px auto; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-qrcode" style="font-size: 3rem;"></i>
+                            </div>
+                            <input type="text" class="form-input" placeholder="Enter UPI ID (optional)">
+                        </div>
+
+                        <label class="payment-option-card">
+                            <input type="radio" name="payment" value="cod" style="display: none;"
+                                onchange="selectPayment('cod')">
+                            <div class="payment-icon"><i class="fas fa-money-bill-wave"></i></div>
+                            <div>
+                                <h4 style="margin: 0;">Cash on Delivery</h4>
+                                <small style="color: var(--text-light);">Pay when you receive</small>
+                            </div>
+                        </label>
+                        <div id="cod-details" class="payment-details" style="display: none;">
+                            <p>You will pay in cash upon delivery. Please keep exact change if possible.</p>
+                        </div>
+                    </div>
+                    <button onclick="placeOrder()" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        Place Order <i class="fas fa-check-circle"></i>
+                    </button>
+                    <button onclick="backToAddress()" class="btn"
+                        style="width: 100%; margin-top: 10px; background: transparent; border: 1px solid var(--text-light); color: var(--text-light);">
+                        Back
+                    </button>
+                </div>
+
+                <!-- Step 4: Success -->
+                <div id="form-success" class="form-section" style="text-align: center;">
+                    <i class="fas fa-check-circle" style="font-size: 4rem; color: #4CAF50; margin-bottom: 20px;"></i>
+                    <h2 style="color: var(--primary-green);">Order Placed Successfully!</h2>
+                    <p style="color: var(--text-light); margin-bottom: 30px;">Order ID: <span id="orderId"></span></p>
+                    <div
+                        style="background: var(--light-green); padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+                        <p>Thank you for shopping with Dharma Dairy & Veg. Your order has been received and will be
+                            processed shortly.</p>
+                    </div>
+                    <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Summary -->
+            <div class="checkout-summary">
+                <h3 style="margin-bottom: 20px;">Order Summary</h3>
+                <div class="summary-items" id="checkout-items">
+                    <!-- Items injected by JS -->
+                </div>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="checkout-subtotal">₹0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Charges</span>
+                    <span id="checkout-delivery">₹40</span>
+                </div>
+                <div class="total-row">
+                    <span>Total</span>
+                    <span id="checkout-total">₹40</span>
+                </div>
+
+                <!-- Trust Badges -->
+                <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #eee;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                        <div
+                            style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-light);">
+                            <i class="fas fa-shield-alt" style="color: var(--primary-green);"></i>
+                            <span>Secure</span>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-light);">
+                            <i class="fas fa-truck" style="color: var(--primary-green);"></i>
+                            <span>Fast Delivery</span>
+                        </div>
+                        <div
+                            style="display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-light);">
+                            <i class="fas fa-leaf" style="color: var(--primary-green);"></i>
+                            <span>100% Fresh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer class="footer-enhanced">
+                <div class="container">
+                    <!-- Newsletter Section -->
+                    <div class="footer-newsletter">
+                        <h3>Join Our Fresh Journey</h3>
+                        <p>Subscribe to get updates on seasonal harvests and exclusive farm-to-table offers.</p>
+                        <form class="newsletter-form"
+                            onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe Now</button>
+                        </form>
+                    </div>
+
+                    <!-- Footer Grid -->
+                    <div class="footer-grid">
+                        <!-- Brand Section -->
+                        <div class="footer-brand">
+                            <div class="footer-logo">
+                                <div class="logo-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="logo-text">
+                                    <h3>Dharma</h3>
+                                    <p>Dairy & Veg</p>
+                                </div>
+                            </div>
+                            <p class="brand-desc">
+                                Bringing the purity of the farm directly to your doorstep. We take pride in delivering
+                                the
+                                freshest organic dairy and vegetables, nurtured with care and delivered with love.
+                            </p>
+                            <div class="footer-social">
+                                <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://wa.me/916351510371" class="social-link whatsapp"><i
+                                        class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="footer-links-grid">
+                            <div class="footer-links-col">
+                                <h4><i class="fas fa-link"></i> Quick Links</h4>
+                                <ul>
+                                    <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                            Home</a></li>
+                                    <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                            Our Story</a></li>
+                                    <li><a href="products.html" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                            Shop All</a></li>
+                                    <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                            Special Offers</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-links-col">
+                                <h4><i class="fas fa-shopping-basket"></i> Shop Categories</h4>
+                                <ul>
+                                    <li><a href="products.html#dairy" class="footer-link"><i
+                                                class="fas fa-chevron-right"></i> Dairy Products</a></li>
+                                    <li><a href="products.html#vegetables" class="footer-link"><i
+                                                class="fas fa-chevron-right"></i> Fresh Vegetables</a></li>
+                                    <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                            Organic Ghee</a></li>
+                                    <li><a href="products.html#leafy" class="footer-link"><i
+                                                class="fas fa-chevron-right"></i> Leafy Greens</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="footer-contact">
+                            <h4><i class="fas fa-envelope"></i> Get in Touch</h4>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Visit Us</span>
+                                    <a href="https://maps.google.com/?q=Dhanera, Banaskantha, Gujarat, India 385310"
+                                        target="_blank">Dhanera, Banaskantha, Gujarat, India 385310</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Call Us</span>
+                                    <a href="tel:+916351510371">+91 6351 510 371</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope-open-text"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Email Us</span>
+                                    <a href="mailto:info@dharmadairy.com">info@dharmadairy.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Bottom -->
+                    <div class="footer-bottom">
+                        <div class="footer-badges">
+                            <div class="footer-badge"><i class="fas fa-truck"></i> Free Delivery</div>
+                            <div class="footer-badge"><i class="fas fa-certificate"></i> 100% Organic</div>
+                            <div class="footer-badge"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                        </div>
+                        <div class="copyright">
+                            &copy; 2024 Dharma Dairy & Veg. All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <script src="js/checkout.js"></script>
+            <script src="js/navbar.js"></script>
+</body>
+
+</html>

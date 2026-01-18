@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharma Dairy & Veg | Pure. Fresh. Trusted.</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar" id="main-nav">
+        <!-- ... (Navigation content is fine) ... -->
+        <div class="container navbar__container">
+            <a href="index.html" class="navbar__logo">
+                <h2>Dharma <span class="accent-gold">Dairy & Veg</span></h2>
+                <p class="navbar__tagline">Pure. Fresh. Trusted.</p>
+            </a>
+
+            <button class="navbar__toggle" aria-controls="navbar-menu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <nav class="navbar__menu" id="navbar-menu">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="index.html" class="navbar__link" aria-current="page">Home</a></li>
+                    <li class="navbar__item navbar__item--has-dropdown">
+                        <a href="products.html" class="navbar__link navbar__link--dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Products <i class="fas fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                        </a>
+                        <ul class="navbar__dropdown" role="menu">
+                            <li><a href="products.html" role="menuitem">All Products</a></li>
+                            <li><a href="products.html#dairy" role="menuitem"><i class="fas fa-wine-bottle"></i> Dairy
+                                    Essentials</a></li>
+                            <li><a href="products.html#vegetables" role="menuitem"><i class="fas fa-carrot"></i> Farm
+                                    Vegetables</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item"><a href="about.html" class="navbar__link">About</a></li>
+                    <li class="navbar__item"><a href="special.html" class="navbar__link">Special</a></li>
+                    <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar__actions">
+                <button class="navbar__action-btn" aria-label="Search" onclick="handleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="navbar__action-btn wishlist-link" aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                </a>
+                <a href="cart.html" class="navbar__action-btn cart-icon-link" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <h1 class="hero-title">Pure Dairy & Fresh Greens for Palanpur.</h1>
+                <p class="hero-subtitle">
+                    Experience farm-fresh A2 milk, paneer, and seasonal vegetables delivered straight to your doorstep
+                    every morning.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://wa.me/917359867349" class="btn btn-primary btn-lg">
+                        <i class="fab fa-whatsapp"></i> Order on WhatsApp
+                    </a>
+                    <a href="#fresh-list" class="btn btn-outline btn-lg">
+                        View Today’s Fresh List
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fresh List Section -->
+        <section id="fresh-list" class="section-padding section-overlap">
+            <div class="container">
+                <div class="fresh-list-container">
+                    <div class="d-flex align-center justify-center desktop-header">
+                        <h2><i class="fas fa-clipboard-check"></i> Today's Fresh</h2>
+                    </div>
+
+                    <div class="fresh-list-grid">
+
+                        <!-- Dairy Column -->
+                        <div class="fresh-list-col">
+                            <h3 class="text-center" style="margin-bottom: 20px; color: var(--primary-green);"><i
+                                    class="fas fa-wine-bottle"></i> Dairy Essentials</h3>
+                            <table class="fresh-list-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="product-name">🥛 A2 Cow Milk</td>
+                                        <td class="stock-status in-stock">In Stock</td>
+                                        <td class="product-price">₹80 / Litre</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="product-name">🧀 Fresh Paneer</td>
+                                        <td class="stock-status in-stock">In Stock</td>
+                                        <td class="product-price">₹320 / kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="product-name">🥣 Fresh Curd</td>
+                                        <td class="stock-status in-stock">In Stock</td>
+                                        <td class="product-price">₹40 / 500g</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="product-name">🧈 Desi Ghee</td>
+                                        <td class="stock-status limited">Limited</td>
+                                        <td class="product-price">₹900 / Litre</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center" style="margin-top: 20px;">
+                                <a href="products.html#dairy" class="btn btn-outline btn-sm">Shop Dairy</a>
+                            </div>
+                        </div>
+
+                        <!-- Veg Column -->
+                        <div class="fresh-list-col">
+                            <h3 class="text-center" style="margin-bottom: 20px; color: var(--success);"><i
+                                    class="fas fa-carrot"></i> Farm Vegetables</h3>
+                            <table class="fresh-list-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="product-name">🍅 Tomatoes (Desi)</td>
+                                        <td class="stock-status in-stock">In Stock</td>
+                                        <td class="product-price">₹40 / kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="product-name">🥔 Potatoes (New)</td>
+                                        <td class="stock-status in-stock">In Stock</td>
+                                        <td class="product-price">₹30 / kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="product-name">🧅 Onions</td>
+                                        <td class="stock-status out-of-stock">Sold Out</td>
+                                        <td class="product-price">₹35 / kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="product-name">🌿 Coriander</td>
+                                        <td class="stock-status limited">Low Stock</td>
+                                        <td class="product-price">₹15 / Bunch</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center" style="margin-top: 20px;">
+                                <a href="products.html#vegetables" class="btn btn-outline btn-sm">Shop Vegetables</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="fresh-list-footer" style="display: flex; flex-direction: column; gap: 5px;">
+                        <span style="font-weight: 600; text-transform: uppercase;">Today's Price List: Dairy
+                            Essentials</span>
+                        <small><i class="fas fa-clock"></i> <span id="live-datetime">Loading...</span> <span
+                                class="live-badge">LIVE</span></small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="section-padding bg-cream">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 40px;">
+                    <h2 class="section-title">Customer Favorites</h2>
+                    <p class="section-subtitle">Our most popular products, loved by everyone.</p>
+                </div>
+                <div class="products-grid">
+                    <!-- Product Card 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/milk.png" alt="Fresh Milk">
+                            <span class="badge in-stock">Daily Fresh</span>
+                            <button class="wishlist-btn-card"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Fresh Milk</h3>
+                            <div class="product-price">₹60 <span>/ Litre</span></div>
+                            <p>Pure, farm-fresh milk delivered daily. No preservatives, just nature.</p>
+                            <div class="product-actions">
+                                <a href="products.html" class="btn btn-outline">Details</a>
+                                <button class="btn btn-primary"
+                                    onclick="addToCart({id: 'milk', name: 'Fresh Milk', price: 60}, event)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/paneer.png" alt="Fresh Paneer">
+                            <span class="badge in-stock">Best Seller</span>
+                            <button class="wishlist-btn-card"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Fresh Paneer</h3>
+                            <div class="product-price">₹80 <span>/ 250g</span></div>
+                            <p>Soft, homemade cottage cheese freshly made every morning.</p>
+                            <div class="product-actions">
+                                <a href="products.html" class="btn btn-outline">Details</a>
+                                <button class="btn btn-primary"
+                                    onclick="addToCart({id: 'paneer', name: 'Fresh Paneer', price: 80}, event)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/images/vegetables.png" alt="Organic Vegetables">
+                            <span class="badge limited">Seasonal</span>
+                            <button class="wishlist-btn-card"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Organic Vegetables</h3>
+                            <div class="product-price">₹40 <span>/ kg</span></div>
+                            <p>Fresh from our organic farms, pesticide-free and healthy.</p>
+                            <div class="product-actions">
+                                <a href="products.html" class="btn btn-outline">Details</a>
+                                <button class="btn btn-primary"
+                                    onclick="addToCart({id: 'veg', name: 'Mixed Veg', price: 40}, event)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Why Choose Dharma Dairy?</h2>
+                    <p class="section-subtitle">We don't just deliver products; we deliver trust and purity to your
+                        home.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>100% Organic</h3>
+                        <p>Certified organic and chemical-free products for your family's health.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Daily Delivery</h3>
+                        <p>Fresh harvest delivered to your doorstep every single morning.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Quality Assured</h3>
+                        <p>Rigorous quality checks at every step to ensure premium standards.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Made with Love</h3>
+                        <p>Traditional farming methods with care, dedication, and respect for nature.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">What Our Customers Say</h2>
+                    <p class="section-subtitle">Real feedback from families who trust us.</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The milk quality is exceptional! You can really taste the
+                            difference. My family loves it. I've been ordering for 6 months now."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar p-color">PS</div>
+                            <div class="author-info">
+                                <h4>Priya Sharma</h4>
+                                <span>Regular Customer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Fresh vegetables every morning! The delivery service is prompt and
+                            reliable. The spinach and tomatoes are always fresh."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar r-color">RK</div>
+                            <div class="author-info">
+                                <h4>Rajesh Kumar</h4>
+                                <span>Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Best paneer in town! Soft, fresh, and perfect for all our recipes.
+                            Highly recommend Dharma Dairy products to everyone."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar a-color">AP</div>
+                            <div class="author-info">
+                                <h4>Anjali Patel</h4>
+                                <span>Happy Mom</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Experience Pure Freshness?</h2>
+                    <p>Join thousands of happy customers enjoying farm-fresh products daily.</p>
+                    <a href="products.html" class="btn btn-gold btn-lg">Start Shopping</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-enhanced">
+        <div class="container">
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <h3>Join Our Fresh Journey</h3>
+                <p>Subscribe to get updates on seasonal harvests and exclusive farm-to-table offers.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe Now</button>
+                </form>
+            </div>
+
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Dharma</h3>
+                            <p>Dairy & Veg</p>
+                        </div>
+                    </div>
+                    <p class="brand-desc">
+                        Bringing the purity of the farm directly to your doorstep. We take pride in delivering the
+                        freshest organic dairy and vegetables, nurtured with care and delivered with love.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/916351510371" class="social-link whatsapp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links-grid">
+                    <div class="footer-links-col">
+                        <h4><i class="fas fa-link"></i> Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a>
+                            </li>
+                            <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> Our
+                                    Story</a></li>
+                            <li><a href="products.html" class="footer-link"><i class="fas fa-chevron-right"></i> Shop
+                                    All</a></li>
+                            <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i> Special
+                                    Offers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4><i class="fas fa-shopping-basket"></i> Shop Categories</h4>
+                        <ul>
+                            <li><a href="products.html#dairy" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                    Dairy Products</a></li>
+                            <li><a href="products.html#vegetables" class="footer-link"><i
+                                        class="fas fa-chevron-right"></i> Fresh Vegetables</a></li>
+                            <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i> Organic
+                                    Ghee</a></li>
+                            <li><a href="products.html#leafy" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                    Leafy Greens</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4><i class="fas fa-envelope"></i> Get in Touch</h4>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Visit Us</span>
+                            <a href="https://maps.google.com/?q=Dhanera, Banaskantha, Gujarat, India 385310"
+                                target="_blank">Dhanera, Banaskantha, Gujarat, India 385310</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Call Us</span>
+                            <a href="tel:+916351510371">+91 6351 510 371</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Email Us</span>
+                            <a href="mailto:info@dharmadairy.com">info@dharmadairy.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-badges">
+                    <div class="footer-badge"><i class="fas fa-truck"></i> Free Delivery</div>
+                    <div class="footer-badge"><i class="fas fa-certificate"></i> 100% Organic</div>
+                    <div class="footer-badge"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                </div>
+                <div class="copyright">
+                    &copy; 2024 Dharma Dairy & Veg. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

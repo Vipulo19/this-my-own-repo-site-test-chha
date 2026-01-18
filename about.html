@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Dharma Dairy & Veg</title>
+    <meta name="description"
+        content="Learn about Dharma Dairy & Veg's commitment to purity, tradition, and community trust.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar" id="main-nav">
+        <div class="container navbar__container">
+            <a href="index.html" class="navbar__logo">
+                <h2>Dharma <span class="accent-gold">Dairy & Veg</span></h2>
+                <p class="navbar__tagline">Pure. Fresh. Trusted.</p>
+            </a>
+
+            <button class="navbar__toggle" aria-controls="navbar-menu" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+
+            <nav class="navbar__menu" id="navbar-menu">
+                <ul class="navbar__list">
+                    <li class="navbar__item"><a href="index.html" class="navbar__link">Home</a></li>
+                    <li class="navbar__item navbar__item--has-dropdown">
+                        <a href="products.html" class="navbar__link navbar__link--dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Products <i class="fas fa-chevron-down" style="font-size: 0.8em; margin-left: 4px;"></i>
+                        </a>
+                        <ul class="navbar__dropdown" role="menu">
+                            <li><a href="products.html" role="menuitem">All Products</a></li>
+                            <li><a href="products.html#dairy" role="menuitem"><i class="fas fa-wine-bottle"></i> Dairy
+                                    Essentials</a></li>
+                            <li><a href="products.html#vegetables" role="menuitem"><i class="fas fa-carrot"></i> Farm
+                                    Vegetables</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar__item"><a href="about.html" class="navbar__link" aria-current="page">About</a>
+                    </li>
+                    <li class="navbar__item"><a href="special.html" class="navbar__link">Special</a></li>
+                    <li class="navbar__item"><a href="contact.html" class="navbar__link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar__actions">
+                <button class="navbar__action-btn" aria-label="Search" onclick="handleSearch()">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="navbar__action-btn wishlist-link" aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                </a>
+                <a href="cart.html" class="navbar__action-btn cart-icon-link" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" style="display:none;">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <div class="container">
+                <ul class="breadcrumbs-list">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><span class="separator"><i class="fas fa-chevron-right"></i></span></li>
+                    <li><span>About Us</span></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <!-- Standardized Page Header -->
+            <div class="page-header">
+                <div class="container">
+                    <h1>Our Story</h1>
+                    <p>Rooted in tradition, driven by purity, and committed to your well-being.</p>
+                </div>
+            </div>
+
+            <!-- Story Section -->
+            <section class="story-section">
+                <div class="story-grid">
+                    <div class="story-content">
+                        <h2>The Dharma Way</h2>
+                        <p>Founded with a vision to bring pure, farm-fresh dairy and organic vegetables to every
+                            household, Dharma Dairy & Veg has been serving the community with dedication and trust for
+                            years.</p>
+                        <p>Our name "Dharma" reflects our commitment to righteousness and duty—to provide you with
+                            products that are not just fresh, but also ethically sourced and sustainably produced.</p>
+                        <p>Every product we offer is a testament to our values: purity, quality, and community trust.
+                        </p>
+                    </div>
+                    <div class="story-image-placeholder">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values Section -->
+            <section class="values-section">
+                <h2>Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🌾</div>
+                        <h3>Purity</h3>
+                        <p>No additives, no preservatives—just pure, natural goodness.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3>Trust</h3>
+                        <p>Building relationships based on transparency and reliability.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <h3>Sustainability</h3>
+                        <p>Caring for the earth while nourishing your family.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline Section -->
+            <!--  <section style="margin-bottom: var(--spacing-xl);">
+                <h2
+                    style="text-align: center; font-size: 2.5rem; margin-bottom: var(--spacing-lg); color: var(--primary-green);">
+                    Our Journey
+                </h2>
+                <div style="max-width: 700px; margin: 0 auto;">
+                    <div
+                        style="border-left: 3px solid var(--accent-gold); padding-left: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+                        <h3 style="color: var(--primary-green); margin-bottom: var(--spacing-sm);">2015 - The Beginning
+                        </h3>
+                        <p style="color: var(--text-light);">Started with a small dairy farm and a big dream to serve
+                            pure milk to the community.</p>
+                    </div>
+                    <div
+                        style="border-left: 3px solid var(--accent-gold); padding-left: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+                        <h3 style="color: var(--primary-green); margin-bottom: var(--spacing-sm);">2018 - Expansion</h3>
+                        <p style="color: var(--text-light);">Added organic vegetables to our product line, partnering
+                            with local farmers.</p>
+                    </div>
+                    <div
+                        style="border-left: 3px solid var(--accent-gold); padding-left: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+                        <h3 style="color: var(--primary-green); margin-bottom: var(--spacing-sm);">2021 - Community
+                            Growth</h3>
+                        <p style="color: var(--text-light);">Reached 10,000+ satisfied customers across Mumbai.</p>
+                    </div>
+                    <div style="border-left: 3px solid var(--accent-gold); padding-left: var(--spacing-lg);">
+                        <h3 style="color: var(--primary-green); margin-bottom: var(--spacing-sm);">2024 - Premium
+                            Experience</h3>
+                        <p style="color: var(--text-light);">Launched our premium online platform for seamless ordering
+                            and delivery.</p>
+                    </div> -->
+            <!-- </div>
+            </section> -->
+        </div>
+    </main>
+
+    <!-- Footer
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Dharma Dairy & Veg</h3>
+                    <p>Your trusted source for pure, fresh, and organic dairy and vegetables.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 6351 510 371</li>
+                        <li><i class="fas fa-envelope"></i> info@dharmadairy&veg.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Dhanera, Banaskantha, Gujarat, India</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div style="display: flex; gap: 15px; font-size: 1.5rem;">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dharma Dairy & Veg. All rights reserved.</p>
+            </div>
+        </div>
+    </footer> -->
+
+    <!-- Enhanced Footer -->
+    <!-- Footer -->
+    <footer class="footer-enhanced">
+        <div class="container">
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <h3>Join Our Fresh Journey</h3>
+                <p>Subscribe to get updates on seasonal harvests and exclusive farm-to-table offers.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe Now</button>
+                </form>
+            </div>
+
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="logo-text">
+                            <h3>Dharma</h3>
+                            <p>Dairy & Veg</p>
+                        </div>
+                    </div>
+                    <p class="brand-desc">
+                        Bringing the purity of the farm directly to your doorstep. We take pride in delivering the
+                        freshest organic dairy and vegetables, nurtured with care and delivered with love.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/916351510371" class="social-link whatsapp"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-link youtube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links-grid">
+                    <div class="footer-links-col">
+                        <h4><i class="fas fa-link"></i> Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i> Home</a>
+                            </li>
+                            <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> Our
+                                    Story</a></li>
+                            <li><a href="products.html" class="footer-link"><i class="fas fa-chevron-right"></i> Shop
+                                    All</a></li>
+                            <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i> Special
+                                    Offers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-col">
+                        <h4><i class="fas fa-shopping-basket"></i> Shop Categories</h4>
+                        <ul>
+                            <li><a href="products.html#dairy" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                    Dairy Products</a></li>
+                            <li><a href="products.html#vegetables" class="footer-link"><i
+                                        class="fas fa-chevron-right"></i> Fresh Vegetables</a></li>
+                            <li><a href="special.html" class="footer-link"><i class="fas fa-chevron-right"></i> Organic
+                                    Ghee</a></li>
+                            <li><a href="products.html#leafy" class="footer-link"><i class="fas fa-chevron-right"></i>
+                                    Leafy Greens</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4><i class="fas fa-envelope"></i> Get in Touch</h4>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Visit Us</span>
+                            <a href="https://maps.google.com/?q=Dhanera, Banaskantha, Gujarat, India 385310"
+                                target="_blank">Dhanera, Banaskantha, Gujarat, India 385310</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Call Us</span>
+                            <a href="tel:+916351510371">+91 6351 510 371</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span class="label">Email Us</span>
+                            <a href="mailto:info@dharmadairy.com">info@dharmadairy.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-badges">
+                    <div class="footer-badge"><i class="fas fa-truck"></i> Free Delivery</div>
+                    <div class="footer-badge"><i class="fas fa-certificate"></i> 100% Organic</div>
+                    <div class="footer-badge"><i class="fas fa-shield-alt"></i> Secure Payment</div>
+                </div>
+                <div class="copyright">
+                    &copy; 2024 Dharma Dairy & Veg. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+
+</html>
